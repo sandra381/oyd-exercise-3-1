@@ -1,6 +1,7 @@
 # oyd-exercise-3-1 — EC2 Compute Module
 
 **Curso:** Optimizaciones y Desempeño — Cloud Deployment Automation  
+**Integrates:**Gabriela Navarro y Sandra Soria
 
 ---
 
@@ -84,11 +85,11 @@ terraform destroy -var-file=envs/dev/dev.tfvars
 ## Evidence
 
 ```
------------------------------------------------------------------
-|                     DescribeInstances                         |
-+----------------------+---------+------------------+
-|  i-05a831acd435693fa | running |  35.90.188.235   |
-+----------------------+---------+------------------+
+---------------------------------------------------
+|                DescribeInstances                |
++----------------------+----------+---------------+
+|  i-00674b60a6367da15 |  running |  52.39.22.97  |
++----------------------+----------+---------------+
 ```
 [Evidencia de instancia corriendo](infra/evidence/instance.txt)
 
@@ -98,11 +99,11 @@ El pipeline de GitHub Actions se ejecuta en cada Pull Request hacia `main`:
 
 | Paso | Comando | Bloquea PR |
 |------|---------|-----------|
-| 1 | `terraform fmt --check -recursive` | ✅ Sí |
-| 2 | `terraform init -backend=false` | ✅ Sí |
-| 3 | `terraform validate` | ✅ Sí |
-| 4 | `terraform plan -var-file=envs/dev/dev.tfvars` | ✅ Sí |
-| 5 | Publicar plan como comentario en el PR | ❌ No |
+| 1 | `terraform fmt --check -recursive` | Sí |
+| 2 | `terraform init -backend=false` | Sí |
+| 3 | `terraform validate` |  Sí |
+| 4 | `terraform plan -var-file=envs/dev/dev.tfvars` |  Sí |
+| 5 | Publicar plan como comentario en el PR |  No |
 
 ### Secrets requeridos en GitHub
 
@@ -111,3 +112,7 @@ El pipeline de GitHub Actions se ejecuta en cada Pull Request hacia `main`:
 | `AWS_ACCESS_KEY_ID` | Access key de AWS |
 | `AWS_SECRET_ACCESS_KEY` | Secret key de AWS |
 | `AWS_REGION` | Región, ej: `us-west-2` |
+
+
+
+

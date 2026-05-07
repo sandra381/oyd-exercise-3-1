@@ -1,6 +1,7 @@
 # oyd-exercise-3-1 — EC2 Compute Module
 
 **Curso:** Optimizaciones y Desempeño — Cloud Deployment Automation  
+**Integrates:**Gabriela Navarro y Sandra Soria
 
 ---
 
@@ -98,11 +99,11 @@ El pipeline de GitHub Actions se ejecuta en cada Pull Request hacia `main`:
 
 | Paso | Comando | Bloquea PR |
 |------|---------|-----------|
-| 1 | `terraform fmt --check -recursive` | ✅ Sí |
-| 2 | `terraform init -backend=false` | ✅ Sí |
-| 3 | `terraform validate` | ✅ Sí |
-| 4 | `terraform plan -var-file=envs/dev/dev.tfvars` | ✅ Sí |
-| 5 | Publicar plan como comentario en el PR | ❌ No |
+| 1 | `terraform fmt --check -recursive` | Sí |
+| 2 | `terraform init -backend=false` | Sí |
+| 3 | `terraform validate` |  Sí |
+| 4 | `terraform plan -var-file=envs/dev/dev.tfvars` |  Sí |
+| 5 | Publicar plan como comentario en el PR |  No |
 
 ### Secrets requeridos en GitHub
 
@@ -111,3 +112,7 @@ El pipeline de GitHub Actions se ejecuta en cada Pull Request hacia `main`:
 | `AWS_ACCESS_KEY_ID` | Access key de AWS |
 | `AWS_SECRET_ACCESS_KEY` | Secret key de AWS |
 | `AWS_REGION` | Región, ej: `us-west-2` |
+
+
+
+

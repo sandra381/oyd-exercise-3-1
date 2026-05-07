@@ -75,7 +75,7 @@ resource "aws_instance" "this" {
     aws s3 cp s3://${var.app_s3_bucket}/server.rb /opt/server.rb
     chmod +x /opt/server.rb
     cd /opt
-    COMPUTE_TYPE=ec2 ruby /opt/server.rb
+    COMPUTE_TYPE=ec2 nohup ruby /opt/server.rb &
   EOF
 
   tags = {

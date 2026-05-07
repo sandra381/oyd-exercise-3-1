@@ -1,0 +1,10 @@
+# Terraform state — never commit this
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+*.tfplan
+
+# Environment secrets
+*.env
+.env*
